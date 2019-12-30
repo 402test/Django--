@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<form action="{% url 'account:login' %}"  method="post">
+      {% csrf_token %}
+        {{ form.non_field_errors }}
+      {% for field in form %}
+                    {{ field }}
+                    {{ field.errors }}
+                {% endfor %}
+
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+{#	<fieldset>#}
+{#		<legend align="center">用户登录</legend></br>#}
+{#		<label>用户名：</label>#}
+{#		<input type="text"  id="user">(请输入用户名)</br></br>#}
+{#		<label>密&nbsp&nbsp码：</label>#}
+{#		<input type="password"  id="pwd1">（输入密码）<br><br>#}
+{#		<input type="submit" name="" value="提交" >#}
+{#	</fieldset>#}
+</form>
+
+
+</body>
+</html>
